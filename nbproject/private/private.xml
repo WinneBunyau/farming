@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/models/bean/Tool.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/models/bean/CropProduce.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/models/bean/AnimalType.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/viewTools.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/models/bean/ToolBorrowRequest.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/AdminToolRequestServlet.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/models/bean/Animal.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/dashboard.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/ToolServlet.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/animals.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/adminTools.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/AdminLoginServlet.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/db/DBConnection.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/ToolBorrowServlet.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/adminLogin.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/LogoutServlet.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/index.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/dao/ToolDAO.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/crops.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/login.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/viewRequests.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/dao/ToolBorrowRequestDAO.java</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/web/adminDashboard.jsp</file>
+            <file>file:/C:/Users/Winne/OneDrive/Documents/NetBeansProjects/Farming/src/java/servlets/AnimalProduceServlet.java</file>
+        </group>
+    </open-files>
+</project-private>
