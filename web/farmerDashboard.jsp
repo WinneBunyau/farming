@@ -143,8 +143,17 @@
                 <h3>Welcome, Farmer!</h3>
             </div>
             <div class="box-body">
-                <p>Manage your farms, animals, crops, and tools efficiently.</p>
-            </div>
+                <div class="box" style="position: relative; text-align: center;">
+                    <img src="image/pic_1.png" alt="Agriculture" style="width: 100%; height: auto; border-radius: 5px;">
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                                background: rgba(0, 0, 0, 0.6); color: white; padding: 20px; border-radius: 5px;">
+                        <h3>Focus on a Sustainable Agricultural Ecosystem</h3>
+                        <p>"Efficient farming requires more than just land and seeds. It demands access to tools, 
+                            proper yield management, and collaboration within the community. Through our platform, we connect 
+                            farmers with the resources they need to ensure more sustainable and productive agriculture."</p>
+                    </div>
+                </div>
+            </div> 
         </div>
     </div>
 

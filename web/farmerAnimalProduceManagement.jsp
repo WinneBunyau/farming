@@ -213,7 +213,37 @@
   </div>
 </div>
 
+<!-- success modal -->        
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">Success</h5>
+      </div>
+      <div class="modal-body text-center">
+        <p id="successMessage"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('success')) {
+      const message = urlParams.get('success');
+      document.getElementById("successMessage").innerText = message;
+      const successModal = new bootstrap.Modal(document.getElementById("successModal"));
+      successModal.show();
+      setTimeout(() => {
+        successModal.hide();
+      }, 2000);
+    }
+  });
+  
+</script>
 </body>
 </html>

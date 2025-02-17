@@ -1,12 +1,63 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.*, javax.servlet.http.*, javax.servlet.*" %>
+<%@ page import="java.sql.*, javax.servlet.http.*, javax.servlet.*, db.DBConnection" %>
 <%
     HttpSession adminSession = request.getSession(false);
     if (adminSession == null || adminSession.getAttribute("adminId") == null) {
         response.sendRedirect("adminLogin.jsp?error=Please login first");
         return;
     }
+
+    int totalFarms = 0;
+    int totalAnimals = 0;
+    int totalCrops = 0;
+    double totalAnimalProduce = 0;
+    double totalCropProduce = 0;
+
+    Connection conn = null;
+    Statement stmt = null;
+    ResultSet rs = null;
+
+    try {
+        conn = DBConnection.getConnection();
+        stmt = conn.createStatement();
+
+        // Get total farms
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM Farms");
+        if (rs.next()) totalFarms = rs.getInt(1);
+        rs.close();
+
+        // Get total animals
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM Animals");
+        if (rs.next()) totalAnimals = rs.getInt(1);
+        rs.close();
+
+        // Get total crops
+        rs = stmt.executeQuery("SELECT COUNT(*) FROM Crops");
+        if (rs.next()) totalCrops = rs.getInt(1);
+        rs.close();
+
+        // Get total animal produce (kg)
+        rs = stmt.executeQuery("SELECT COALESCE(SUM(quantity), 0) FROM AnimalProduce");
+        if (rs.next()) totalAnimalProduce = rs.getDouble(1);
+        rs.close();
+
+        // Get total crop produce (kg)
+        rs = stmt.executeQuery("SELECT COALESCE(SUM(quantity), 0) FROM crop_produce");
+        if (rs.next()) totalCropProduce = rs.getDouble(1);
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (rs != null) rs.close();
+            if (stmt != null) stmt.close();
+            if (conn != null) conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,6 +162,7 @@
     </style>
 </head>
 <body>
+    <!-- Sidebar -->
     <div class="sidebar">
         <h2>Admin Panel</h2>
         <a href="adminDashboard.jsp">Dashboard</a>
@@ -141,19 +193,39 @@
         <a href="LogoutServlet" class="logout-link">Logout</a>
     </div>
 
+    <!-- Main Content -->
     <div class="content">
         <div class="box">
             <div class="box-header">
                 <h3>Welcome, Admin!</h3>
             </div>
             <div class="box-body">
-                <p>Manage all farming-related entities from this dashboard.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="box">
+                            <h3>Total Farms</h3>
+                            <h5><%= totalFarms %></h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <h3>Total Animals</h3>
+                            <h5><%= totalAnimals %></h5>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <h3>Total Crops</h3>
+                            <h5><%= totalCrops %></h5>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+                
+<!-- Bootstrap JS (Letak sebelum </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
